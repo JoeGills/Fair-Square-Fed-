@@ -1,12 +1,17 @@
 import styles from "./card.module.css";
+import {
+  MdOutlineSecurity,
+  MdStackedLineChart,
+  FaBalanceScale,
+} from "react-icons/md";
 
-export default function Card({ title, text, children }) {
+export default function Card({ icon, title, text }) {
   return (
     <>
       <div className={styles.card}>
-        {/* <div className={styles.cardIcon}>{children}</div> */}
-        <div className={styles.cardTitle}>{title}</div>
-        <text>{text}</text>
+        <span>{icon}</span>
+        <h3>{title}</h3>
+        <p>{text}</p>
       </div>
     </>
   );

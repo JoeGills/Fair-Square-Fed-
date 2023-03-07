@@ -5,7 +5,7 @@ import Card from "../card";
 import {
   MdOutlineSecurity,
   MdStackedLineChart,
-  FaBalanceScale,
+  MdBalance,
 } from "react-icons/md";
 
 export default function DefaultLayout({ children }) {
@@ -38,35 +38,32 @@ export default function DefaultLayout({ children }) {
           <div className="container marketing">
             {/* Three columns of text below the carousel */}
             <div className="row">
-              <div className="col-lg-4">
-                {/* <Card
+              <div className="col-lg-4 card-container">
+                <Card
                   title={"Progress"}
                   text={
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
                   }
-                >
-                  <MdStackedLineChart />
-                </Card> */}
+                  icon={<MdStackedLineChart />}
+                ></Card>
               </div>
-              <div className="col-lg-4">
-                {/* <Card
+              <div className="col-lg-4 card-container">
+                <Card
                   title={"Equality"}
                   text={
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
                   }
-                >
-                  <FaBalanceScale />
-                </Card> */}
+                  icon={<MdBalance />}
+                ></Card>
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-4 card-container">
                 <Card
                   title={"Security"}
                   text={
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
                   }
-                >
-                  <MdOutlineSecurity />
-                </Card>
+                  icon={<MdOutlineSecurity />}
+                ></Card>
               </div>
             </div>
 
@@ -107,15 +104,18 @@ export default function DefaultLayout({ children }) {
         -------------------------------------------------- */
 
         /* Center align the text within the three columns below the carousel */
-        .marketing .col-lg-4 {
+        .marketing .card-container {
+          padding: 3rem;
           margin-bottom: 1.5rem;
           text-align: center;
         }
+
         .marketing h2 {
           font-weight: 400;
         }
+
         /* rtl:begin:ignore */
-        .marketing .col-lg-4 p {
+        .marketing .card-container p {
           margin-right: 0.75rem;
           margin-left: 0.75rem;
         }
