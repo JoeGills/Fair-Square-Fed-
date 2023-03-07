@@ -42,7 +42,7 @@ export default function DefaultLayout({ children }) {
                 <Card
                   title={"Progress"}
                   text={
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
+                    "We use reliable and ethical methods to collect and analyze data on diversity. We protect the privacy and confidentiality of our data sources. We use the insights from our data to inform our actions and policies. We aim to promote fairness and justice for all."
                   }
                   icon={<MdStackedLineChart />}
                 ></Card>
@@ -51,7 +51,7 @@ export default function DefaultLayout({ children }) {
                 <Card
                   title={"Equality"}
                   text={
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
+                    "We welcome people of all backgrounds, identities, and perspectives to join our community. We foster a culture of inclusion, respect, and collaboration. We celebrate our differences and learn from each other. We strive to create a better world for everyone."
                   }
                   icon={<MdBalance />}
                 ></Card>
@@ -60,7 +60,7 @@ export default function DefaultLayout({ children }) {
                 <Card
                   title={"Security"}
                   text={
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
+                    "We use advanced encryption, authentication, and authorization methods to protect your data. We do not share your personal information with third parties without your consent. We respect your rights and preferences regarding your data."
                   }
                   icon={<MdOutlineSecurity />}
                 ></Card>
