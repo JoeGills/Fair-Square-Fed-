@@ -10,6 +10,7 @@ export default function DefaultLayout({ children }) {
       </header>
       <main>
         <div>{children}</div>
+        Test
       </main>
       <article>
         <Card></Card>
