@@ -2,19 +2,19 @@ export default function Navbar() {
 	return (
 		<>
 			<nav
-				classname="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+				className="navbar navbar-expand-lg bg-body-tertiary bg-dark"
 				data-bs-theme="dark"
 			>
-				<div classname="container-fluid">
+				<div className="container-fluid">
 					<a
-						classname="navbar-brand"
+						className="navbar-brand"
 						href="#"
 						style={{ color: "white" }}
 					>
 						Navbar
 					</a>
 					<button
-						classname="navbar-toggler"
+						className="navbar-toggler"
 						type="button"
 						data-bs-toggle="collapse"
 						data-bs-target="#navbarSupportedContent"
@@ -22,16 +22,16 @@ export default function Navbar() {
 						aria-expanded="false"
 						aria-label="Toggle navigation"
 					>
-						<span classname="navbar-toggler-icon"></span>
+						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div
-						classname="collapse navbar-collapse"
+						className="collapse navbar-collapse"
 						id="navbarSupportedContent"
 					>
-						<ul classname="navbar-nav me-auto mb-2 mb-lg-0">
-							<li classname="nav-item">
+						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+							<li className="nav-item">
 								<a
-									classname="nav-link active"
+									className="nav-link active"
 									aria-current="page"
 									href="#"
 									style={{
@@ -41,9 +41,9 @@ export default function Navbar() {
 									About us
 								</a>
 							</li>
-							<li classname="nav-item">
+							<li className="nav-item">
 								<a
-									classname="nav-link"
+									className="nav-link"
 									href="#"
 									style={{
 										color: "grey",
@@ -54,11 +54,11 @@ export default function Navbar() {
 							</li>
 						</ul>
 						<form
-							classname="d-flex"
+							className="d-flex"
 							role="search"
 						>
 							<button
-								classname="btn btn-outline-success"
+								className="btn btn-outline-success"
 								type="submit"
 							>
 								Login

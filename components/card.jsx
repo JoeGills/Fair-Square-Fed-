@@ -27,19 +27,3 @@ export default function Card({ title, text, children }) {
     </>
   );
 }
-// export default function Card({ title, text, children }) {
-// return (
-// <>
-//     <div
-//       className='card'
-//     >
- 
-//     {children}
-//     <div className='card-title'>
-//       {title}
-//     </div>
-//     <text>{text}</text>
-//   </div>
-// </>
-// );
-// }
