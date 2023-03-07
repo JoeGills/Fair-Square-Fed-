@@ -1,0 +1,13 @@
+.card {
+	background-color: #cdc8c8;
+	width: 18rem;	
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 0.5rem;
+	text-align: center;
+}
+
+.card-title {
+padding: 1rem;
+font-size: 1.2rem;
+}
