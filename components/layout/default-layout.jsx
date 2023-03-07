@@ -2,6 +2,11 @@ import Head from "next/head";
 import Jumbotron from "../jumbotron";
 import Navbar from "./navbar";
 import Card from "../card";
+import {
+  MdOutlineSecurity,
+  MdStackedLineChart,
+  FaBalanceScale,
+} from "react-icons/md";
 
 export default function DefaultLayout({ children }) {
   return (
@@ -34,13 +39,34 @@ export default function DefaultLayout({ children }) {
             {/* Three columns of text below the carousel */}
             <div className="row">
               <div className="col-lg-4">
-                <Card></Card>
+                {/* <Card
+                  title={"Progress"}
+                  text={
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
+                  }
+                >
+                  <MdStackedLineChart />
+                </Card> */}
               </div>
               <div className="col-lg-4">
-                <Card></Card>
+                {/* <Card
+                  title={"Equality"}
+                  text={
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
+                  }
+                >
+                  <FaBalanceScale />
+                </Card> */}
               </div>
               <div className="col-lg-4">
-                <Card></Card>
+                <Card
+                  title={"Security"}
+                  text={
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at, finibus porttitor magna. Nam convallis magna odio, vel tincidunt ligula condimentum non."
+                  }
+                >
+                  <MdOutlineSecurity />
+                </Card>
               </div>
             </div>
 
@@ -73,7 +99,6 @@ export default function DefaultLayout({ children }) {
         /* Padding below the footer and lighter body text */
 
         .body {
-          padding-top: 3rem;
           padding-bottom: 3rem;
           color: #5a5a5a;
         }
