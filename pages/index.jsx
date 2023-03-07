@@ -1,14 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
+import DefaultLayout from "../components/layout/default-layout";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div>
+    <DefaultLayout>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       Welcome
-    </div>
+    </DefaultLayout>
   );
 }
