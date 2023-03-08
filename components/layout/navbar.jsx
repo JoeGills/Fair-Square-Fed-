@@ -9,9 +9,6 @@ export default function Navbar() {
       >
         <div className="container-fluid">
           <NavLink className="navbar-brand" href="/" style={{ color: "white" }}>
-            Navbar
-          </NavLink>
-          <NavLink className="navbar-brand" href="/" style={{ color: "white" }}>
             Fair&Square
           </NavLink>
           <button
