@@ -1,10 +1,26 @@
 import Head from "next/head";
-import Image from "next/image";
+import { useState } from "react";
 import DefaultLayout from "../../components/layout/default-layout";
 import FormLayout from "../../components/layout/form-layout";
-import styles from "./login.module.css";
+import { useRouter } from "next/router";
 
 export default function LoginPage() {
+  let [state, setState] = useState({});
+  const router = useRouter();
+
+  let Submit = () => {
+    setState((prev) => {
+      return {
+        ...prev,
+        submitted: true,
+      };
+    });
+
+    setTimeout(() => {
+      router.push("/user/employee-pass-code");
+    }, 1000);
+  };
+
   return (
     <DefaultLayout>
       <Head>
@@ -12,8 +28,42 @@ export default function LoginPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="color-bg">
-        <FormLayout title="Want to make your company Fair & Square?Login using your company email.">
-          <ul className={styles.formLabel}>
+        <FormLayout title="Login using your company email.">
+          <form>
+            <div className="form-group">
+              {/* <label htmlFor="name">Email</label> */}
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <br />
+            {state.submitted ? (
+              <div className="alert alert-success">Please wait...</div>
+            ) : (
+              <></>
+            )}
+            <button
+              onClick={() => Submit()}
+              type="button"
+              className="btn btn-success"
+            >
+              Submit
+            </button>
+          </form>
+
+          <style jsx>
+            {`
+              form {
+                width: 80%;
+                margin: 0 auto;
+              }
+            `}
+          </style>
+
+          {/* <ul className={styles.formLabel}>
             <li className={styles.formList}>
               <input type="checkbox" id="checkbox"></input>
               <label htmlFor="checkbox">jkhgjkh</label>
@@ -29,7 +79,7 @@ export default function LoginPage() {
           </ul>
           <button type="submit" id="button" className={styles.formButton}>
             Start
-          </button>
+          </button> */}
         </FormLayout>
       </div>
     </DefaultLayout>

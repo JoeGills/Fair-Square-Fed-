@@ -1,3 +1,4 @@
+import Image from "next/image";
 import NavLink from "next/link";
 
 export default function Navbar() {
@@ -8,7 +9,18 @@ export default function Navbar() {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <NavLink className="navbar-brand" href="/" style={{ color: "white" }}>
+          <Image
+            src="/logo.svg"
+            width="40"
+            height="40"
+            className="d-inline-block align-top"
+            alt=""
+          />
+          <NavLink
+            className="navbar-brand"
+            href="/"
+            style={{ color: "white", padding: "0.3rem" }}
+          >
             Fair&Square
           </NavLink>
           <button
@@ -25,17 +37,36 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#about-us">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  href={{
+                    pathname: "/",
+                    hash: "about-us",
+                  }}
+                  style={{
+                    color: "grey",
+                  }}
+                >
                   About us
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact-us">
-                  Cotact us
-                </a>
+                <NavLink
+                  className="nav-link"
+                  href={{
+                    pathname: "/",
+                    hash: "contact-us",
+                  }}
+                  style={{
+                    color: "grey",
+                  }}
+                >
+                  Contact us
+                </NavLink>
               </li>
             </ul>
-            <div className="d-flex login-link">
+            <div className="d-flex btn-success">
               <NavLink
                 href="/user/login"
                 id="login-btn"
@@ -48,7 +79,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-
       <style jsx>
         {`
           .navbar {
@@ -57,6 +87,15 @@ export default function Navbar() {
 
           .nav-link {
             color: #eee;
+          }
+
+          .nav-link:hover {
+            color: red;
+          }
+
+          .navbar-brand {
+            font-size: 1.4rem;
+            padding: 0.3rem;
           }
         `}
       </style>
