@@ -4,6 +4,7 @@ import ContactUs from "../contents/contact-us";
 import Navbar from "./navbar";
 
 import InformationCards from "./information-cards";
+import Footer from "./footer";
 
 export default function DefaultLayout({ children }) {
   return (
@@ -44,15 +45,7 @@ export default function DefaultLayout({ children }) {
             <hr className="featurette-divider" />
           </div>
 
-          <footer className="container">
-            <p className="float-end">
-              <a href="#">Back to top</a>
-            </p>
-            <p>
-              &copy; 2023 Fair&Square, Inc. &middot; <a href="#">Privacy</a>{" "}
-              &middot; <a href="#">Terms</a>
-            </p>
-          </footer>
+          <Footer />
         </main>
       </div>
       <style jsx>{`

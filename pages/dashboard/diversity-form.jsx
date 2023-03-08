@@ -1,14 +1,22 @@
 import Head from "next/head";
 import Image from "next/image";
-import DefaultLayout from "../../components/layout/default-layout";
+import SharedLayout from "../../components/layout/shared-layout";
 
 export default function DiversityFormPage() {
   return (
-    <DefaultLayout>
+    <SharedLayout>
       <Head>
         <title>DiversityForm</title>
       </Head>
-      DiversityForm
-    </DefaultLayout>
+      <div className="body">Form goes here</div>
+
+      <style jsx>
+        {`
+          .body {
+            padding: 5rem;
+          }
+        `}
+      </style>
+    </SharedLayout>
   );
 }

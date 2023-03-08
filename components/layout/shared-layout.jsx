@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "./footer";
 import Navbar from "./navbar";
 
 export default function SharedLayout({ children }) {
@@ -23,7 +24,7 @@ export default function SharedLayout({ children }) {
       <main>
         <div className="container marketing">{children}</div>
 
-        <footer className="container">footer</footer>
+        <Footer />
       </main>
 
       <style jsx>{`

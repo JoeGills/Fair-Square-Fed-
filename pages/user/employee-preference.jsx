@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DefaultLayout from "../../components/layout/default-layout";
 import FormLayout from "../../components/layout/form-layout";
 import { useRouter } from "next/router";
 
 export default function EmployeePreferencePage() {
-  let [state, setState] = useState({});
+  let [state, setState] = useState({ categories: [], submitted: false });
   const router = useRouter();
 
   let Submit = () => {
@@ -17,9 +17,31 @@ export default function EmployeePreferencePage() {
     });
 
     setTimeout(() => {
-      router.push("/");
+      router.push("/dashboard/diversity-form");
     }, 1000);
   };
+
+  const getCategories = async () => {
+    try {
+      const res = await fetch(`/api/indicators`);
+      const data = await res.json();
+      console.log(data);
+      if (data) {
+        setState((prev) => {
+          return {
+            ...prev,
+            categories: [...new Set(data.map((x) => x.category))],
+          };
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <DefaultLayout>
@@ -31,21 +53,16 @@ export default function EmployeePreferencePage() {
         <FormLayout title="Are there any subjects you don’t feel comfortable answering questions about?">
           <form>
             {/* <form style={{ textAlign: "left" }}> */}
-            <div className="form-group">
-              <label htmlFor="name">
-                <input type="checkbox" /> Religion
-              </label>
-            </div>
-            <div className="form-group">
-              <label htmlFor="name">
-                <input type="checkbox" /> Gender
-              </label>
-            </div>
-            <div className="form-group">
-              <label htmlFor="name">
-                <input type="checkbox" /> Sexual Orientation
-              </label>
-            </div>
+            {state.categories.map((category) => {
+              return (
+                <div className="form-group">
+                  <label>
+                    <input type="checkbox" /> {category}
+                  </label>
+                </div>
+              );
+            })}
+
             <br />
             {state.submitted ? (
               <div className="alert alert-success">Please wait...</div>
@@ -66,6 +83,7 @@ export default function EmployeePreferencePage() {
               form {
                 width: 80%;
                 margin: 0 auto;
+                text-align: left;
               }
             `}
           </style>

@@ -1,3 +1,15 @@
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <>
+      <footer className="container">
+        <p className="float-end">
+          <a href="#">Back to top</a>
+        </p>
+        <p>
+          &copy; 2023 Fair&Square, Inc. &middot; <a href="#">Privacy</a>{" "}
+          &middot; <a href="#">Terms</a>
+        </p>
+      </footer>
+    </>
+  );
 }
