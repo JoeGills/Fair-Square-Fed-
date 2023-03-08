@@ -1,3 +1,5 @@
+import NavLink from "next/link";
+
 export default function Carousel() {
   return (
     <div className="carousel-container">
@@ -21,9 +23,9 @@ export default function Carousel() {
             Equality is at the core of our values, and we strive to create a
             more equitable and just workplace for all employees.
           </p>
-          <button type="button" className="btn btn-success">
+          <NavLink href="/user/login" className="btn btn-success">
             Get Started
-          </button>
+          </NavLink>
         </div>
       </div>
 
