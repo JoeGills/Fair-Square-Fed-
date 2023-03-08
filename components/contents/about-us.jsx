@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutUs({ children }) {
   return (
     <>
-      <div className="row featurette">
+      <div className="row featurette" id="about-us">
         <div className="col-md-7">
           <h2 className="featurette-heading">
             About Us
