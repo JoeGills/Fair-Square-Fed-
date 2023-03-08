@@ -17,27 +17,7 @@ body {
   background-size: cover;
 }
 
-.carousel-overlay {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 1;
-  width: 90%;
-  padding: 4rem;
-}
 
-h1 {
-  font-size: 4rem;
-  text-shadow: 2px 2px 5px rgba(6, 4, 4, 0.559);
-}
-
-/* p {
-  font-size: 1.2rem;
-  text-shadow: 2px 2px 5px rgb(6, 4, 4);
-} */
 
 .btn-success {
   font-size: 1rem;
@@ -48,10 +28,11 @@ h1 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   text-shadow: 2px 2px 5px rgba(6, 4, 4, 0.457);
 }
+/* p {
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 5px rgb(6, 4, 4);
+} */
 
-.video {
-  width: 100%;
-}
 /* 
 .logo {
   width: 400px;

@@ -1,9 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import DefaultLayout from "../components/layout/default-layout";
-import { MdStackedLineChart } from "react-icons/md";
 import Carousel from "../components/carousel";
-import VideoPlayer from "../components/videoPlayer";
 
 export default function LandingPage() {
   return (
