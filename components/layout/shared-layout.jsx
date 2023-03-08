@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Jumbotron from "../jumbotron";
 import Navbar from "./navbar";
-import Card from "../card";
 
 export default function SharedLayout({ children }) {
   return (
