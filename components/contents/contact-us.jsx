@@ -15,7 +15,7 @@ export default function ContactUs({ children }) {
 
   return (
     <>
-      <div className="row featurette">
+      <div className="row featurette" id="contact-us">
         <div className="col-md-7 order-md-2">
           <h2 className="featurette-heading">Contact Us</h2>
           <div className="lead">

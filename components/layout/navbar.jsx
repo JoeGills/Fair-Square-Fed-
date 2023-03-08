@@ -4,12 +4,15 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+        className="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top"
         data-bs-theme="dark"
       >
         <div className="container-fluid">
           <NavLink className="navbar-brand" href="/" style={{ color: "white" }}>
             Navbar
+          </NavLink>
+          <NavLink className="navbar-brand" href="/" style={{ color: "white" }}>
+            Fair&Square
           </NavLink>
           <button
             className="navbar-toggler"
@@ -25,37 +28,41 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href="#"
-                  style={{
-                    color: "white",
-                  }}
-                >
+                <a className="nav-link" aria-current="page" href="#about-us">
                   About us
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#"
-                  style={{
-                    color: "grey",
-                  }}
-                >
+                <a className="nav-link" href="#contact-us">
                   Cotact us
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <NavLink href="/user/login" className="btn btn-outline-success">
+            <div className="d-flex login-link">
+              <NavLink
+                href="/user/login"
+                id="login-btn"
+                className="login-btn"
+                style={{ color: "#fff", textDecoration: "none" }}
+              >
                 Login
               </NavLink>
-            </form>
+            </div>
           </div>
         </div>
       </nav>
+
+      <style jsx>
+        {`
+          .navbar {
+            z-index: 10;
+          }
+
+          .nav-link {
+            color: #eee;
+          }
+        `}
+      </style>
     </>
   );
 }
