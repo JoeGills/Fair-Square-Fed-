@@ -68,7 +68,7 @@ export default function ContactUs({ children }) {
         <div className="col-md-5 order-md-1">
           <Image
             alt="contact us"
-            src="/contact-us.png"
+            src="/contactus.png"
             width="500"
             height="500"
             role="img"

@@ -55,7 +55,7 @@ export default function AboutUs({ children }) {
         <div className="col-md-5">
           <Image
             alt="about us"
-            src="/about-us.png"
+            src="/aboutus.png"
             className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
             width="500"
             height="500"

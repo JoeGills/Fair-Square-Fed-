@@ -10,7 +10,7 @@ export default function Navbar() {
       >
         <div className="container-fluid">
           <Image
-            src="/logo.svg"
+            src="/logo-navbar.svg"
             width="40"
             height="40"
             className="d-inline-block align-top"
