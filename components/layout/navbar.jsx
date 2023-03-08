@@ -8,9 +8,9 @@ export default function Navbar() {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#" style={{ color: "white" }}>
+          <NavLink className="navbar-brand" href="/" style={{ color: "white" }}>
             Navbar
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"

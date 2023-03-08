@@ -17,8 +17,6 @@ body {
   background-size: cover;
 }
 
-
-
 .btn-success {
   font-size: 1rem;
   background: linear-gradient(to bottom right, #6ad206, #6ad206, #49e064);
@@ -38,3 +36,19 @@ body {
   width: 400px;
   height: auto;
 } */
+
+.color-bg {
+  background: linear-gradient(
+    100.01deg,
+    #6b48a2 8.6%,
+    #3f75a8 68.07%,
+    #2ab2a9 90.95%
+  );
+  padding: 4rem 0 4rem 0;
+}
+
+.form-control {
+  background: #f3f1f1;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 20px;
+}
