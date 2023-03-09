@@ -1,10 +1,5 @@
 import Head from "next/head";
-import AboutUs from "../contents/about-us";
-import ContactUs from "../contents/contact-us";
-import Navbar from "./navbar";
-
-import InformationCards from "./information-cards";
-import Footer from "./footer";
+import Sidebar from "./sidebar";
 
 export default function DefaultLayout({ children }) {
   return (
@@ -18,56 +13,30 @@ export default function DefaultLayout({ children }) {
         />
         <meta name="generator" content="Hugo 0.84.0" />
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <div className="body">
-        <header>
-          <Navbar />
-        </header>
+        <header></header>
 
         <main>
+          <Sidebar />
           {children}
-
-          <InformationCards />
-
-          {/* 
-          Marketing messaging and featurettes
-          ==================================================
-          Wrap the rest of the page in another container to center all the content. */}
-
-          <div className="container marketing">
-            <hr className="featurette-divider" />
-            <AboutUs></AboutUs>
-
-            <hr className="featurette-divider" />
-            <ContactUs></ContactUs>
-
-            <hr className="featurette-divider" />
-          </div>
-
-          <Footer />
         </main>
       </div>
+
       <style jsx>{`
         .body {
           padding-bottom: 3rem;
           color: #5a5a5a;
         }
-
-        .marketing h2 {
-          font-weight: 400;
-        }
-
-        .featurette-divider {
-          margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-        }
-
-        @media (min-width: 40em) {
-          .carousel-caption p {
-            margin-bottom: 1.25rem;
-            font-size: 1.25rem;
-            line-height: 1.4;
-          }
+        main {
+          display: flex;
+          flex-wrap: nowrap;
+          height: 100vh;
+          height: -webkit-fill-available;
+          max-height: 100vh;
+          overflow-x: auto;
+          overflow-y: hidden;
         }
       `}</style>
     </>

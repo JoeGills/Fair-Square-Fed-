@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "./footer";
 import Navbar from "./navbar";
 
+
 export default function SharedLayout({ children }) {
   return (
     <>
