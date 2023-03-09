@@ -1,44 +1,31 @@
 export default function handler(req, res) {
-  res.status(200).json([
+  const data = [
     {
-      category: "Identity",
-      title: "Gender",
-      options: ["Male", "Female", "Other"],
+      title: "Personality",
+      description: "Personal identity and characteristics",
+      example:"Ethnicity, Gender, Sexual Orientation"
     },
     {
-      category: "Identity",
-      title: "Sexual Orientation",
-      options: ["Gay", "Queer", "Straight", "Other"],
+      title: "Beliefs",
+      description: "Personal beliefs and values",
+      example:"Religion, Political Affiliation, Personal Values"
     },
     {
-      category: "Beliefs",
-      title: "Religion",
-      options: ["Christian", "Muslim", "Athiest", "Other"],
+      title: "Background",
+      description: "Personal background and context",
+      example:"Gender, Ethnicity, Nationality"
     },
     {
-      category: "Beliefs",
-      title: "Political Affiliation",
-      options: ["Option 1", "Option 2", "Other"],
+      title: "Ability",
+      description: "Personal abilities and disabilities",
+      example:"Disability Status, Language Proficiency, Problem Solving Skills"
     },
     {
-      category: "Background",
-      title: "Education Level",
-      options: ["BSc", "Master's", "Other", "None"],
+      title: "Experience",
+      description: "Personal experience and skills",
+      example:"Work Experience, Volunteer Experience, Internship Experience"
     },
-    {
-      category: "Background",
-      title: "Native Language",
-      options: ["English", "Persian", "Swedish"],
-    },
-    {
-      category: "Ability",
-      title: "Disability Status",
-      options: ["None", "Visionary impaired"],
-    },
-    {
-      category: "Experience",
-      title: "Work Experience",
-      options: ["None", "1", "2"],
-    },
-  ]);
+  ];
+
+  res.status(200).json(data);
 }

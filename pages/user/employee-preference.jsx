@@ -18,19 +18,18 @@ export default function EmployeePreferencePage() {
 
     setTimeout(() => {
       router.push("/dashboard/diversity-form");
-    }, 1000);
+    }, 500);
   };
 
   const getCategories = async () => {
     try {
-      const res = await fetch(`/api/indicators`);
+      const res = await fetch(`/api/categories`);
       const data = await res.json();
-      console.log(data);
       if (data) {
         setState((prev) => {
           return {
             ...prev,
-            categories: [...new Set(data.map((x) => x.category))],
+            categories: data,
           };
         });
       }
@@ -50,14 +49,17 @@ export default function EmployeePreferencePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="color-bg">
-        <FormLayout title="Are there any subjects you don’t feel comfortable answering questions about?">
+        <FormLayout title="Are there any personal traits you don’t feel comfortable answering questions about?">
           <form>
             {/* <form style={{ textAlign: "left" }}> */}
-            {state.categories.map((category) => {
+            {state.categories.map((category, index) => {
               return (
-                <div className="form-group">
+                <div className="form-group" key={index}>
                   <label>
-                    <input type="checkbox" /> {category}
+                    <input type="checkbox" /> {category.title}
+                    <span className="help-block">
+                      {category.description}. For example: {category.example}
+                    </span>
                   </label>
                 </div>
               );
