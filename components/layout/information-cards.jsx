@@ -43,7 +43,8 @@ export default function InformationCards({ children }) {
         {`
           .information-cards {
             position: absolute;
-            width: 100vw;
+            padding: 2rem;
+            width: calc(100vw - 280px);
             margin: 2rem auto 0 auto;
             padding: 2rem 5rem 0rem 5rem;
             background-color: #5e6c99;
