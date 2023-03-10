@@ -3,17 +3,37 @@ import DefaultLayout from "../components/default-layout";
 import Cards from "../components/information-cards";
 import Image from "next/image";
 import NavLink from "next/link";
+import { useContext } from "react";
+import QuestionContext from "../utils/questionContext";
+import questions from "../utils/questions";
 
 export default function LandingPage() {
+  const { sharedState, setSharedState } = useContext(QuestionContext);
+  setSharedState((prev) => {
+    return {
+      ...prev,
+      currentQuestion: questions[0],
+      currentQuestionIndex: 0,
+    };
+  });
+
   return (
     <DefaultLayout>
       <Head>
-        <title>Fair&Square - Home Page</title>
+        <title>Fair & Square | Welcome!</title>
         <meta
           name="description"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ante dolor, varius eget nulla at"
+          content=" At Fair&Square, we are dedicated to helping organizations create more diverse and inclusive workplaces."
         />
-        <meta name="keywords" content="Lorem ipsum dolor sit amet" />
+        <meta
+          name="keywords"
+          content="Diversity and inclusivity, Workplace diversity, Inclusive hiring practices, Anonymous data tracking and analysis, Employee engagement, Data security and confidentiality, Equality and justice in the workplace, Improving hiring and promotion practices, Equitable society, Positive impact on employees"
+        />
+
+        {/* <meta name="robots" content="index, follow" /> */}
+        <meta name="robots" content="noindex, nofollow" />
+
+        <link rel="canonical" href="https://fs.fs/" />
       </Head>
 
       <div className="body">
@@ -37,10 +57,7 @@ export default function LandingPage() {
                 />
               </p>
 
-              <NavLink
-                href="/user/employee-preference"
-                className="btn btn-success"
-              >
+              <NavLink href="/preferences" className="btn btn-success">
                 Get Started
               </NavLink>
             </div>

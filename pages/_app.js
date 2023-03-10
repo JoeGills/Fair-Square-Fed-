@@ -8,7 +8,7 @@ function FairSquareApp({ Component, pageProps }) {
   const [sharedState, setSharedState] = useState({
     currentQuestion: questions[0],
     currentQuestionIndex: 0,
-    answers: questions.map((x) => {}),
+    answers: questions.map((x) => null),
   });
 
   return (
