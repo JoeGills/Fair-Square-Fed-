@@ -1,12 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import "../styles/global.css";
-import { AppWrapper } from "./appContext";
+import QuestionContext from "../utils/questionContext";
 
 function FairSquareApp({ Component, pageProps }) {
+  const [sharedState, setSharedState] = useState({
+    currentQuestion: {},
+    index: 0,
+  });
+
   return (
-    <AppWrapper>
+    <QuestionContext.Provider value={{ sharedState, setSharedState }}>
       <Component {...pageProps} />
-    </AppWrapper>
+    </QuestionContext.Provider>
   );
 }
 

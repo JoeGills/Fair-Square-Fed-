@@ -1,10 +1,14 @@
 import Image from "next/image";
+import { useContext } from "react";
 import Answered from "../public/answered.svg";
 import Current from "../public/current.svg";
 import Empty from "../public/gray.svg";
+import QuestionContext from "../utils/questionContext";
 import Questions from "../utils/questions";
 
 function ProgressBar({ currentQuestion }) {
+  const { state, setState } = useContext(QuestionContext);
+
   const numQuestions = Questions.length;
   const squares = Array(numQuestions)
     .fill()
@@ -22,6 +26,8 @@ function ProgressBar({ currentQuestion }) {
         </div>
       );
     });
+
+  console.log(state);
 
   return (
     <div className="progress-bar">
