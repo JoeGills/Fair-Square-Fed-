@@ -13,7 +13,6 @@ export default function LandingPage() {
         />
         <meta name="keywords" content="Lorem ipsum dolor sit amet" />
       </Head>
-
       <div className="body d-flex align-items-center justify-content-center">
         <div class="card text-center">
           <div class="card-body">

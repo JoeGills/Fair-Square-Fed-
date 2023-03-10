@@ -37,7 +37,6 @@ export default function DefaultLayout({ children }) {
           overflow-y: hidden;
         }
         .content {
-          padding: 1rem;
           width: 100vw;
           height:100%;
         }
