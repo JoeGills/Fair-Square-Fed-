@@ -28,14 +28,12 @@ export default function DefaultLayout({ children }) {
 
       <style jsx>{`
         .body {
-          padding-bottom: 3rem;
           color: #5a5a5a;
         }
         main {
           display: flex;
           flex-wrap: nowrap;
           height: 100vh;
-          height: -webkit-fill-available;
           max-height: 100vh;
           overflow-x: auto;
           overflow-y: hidden;

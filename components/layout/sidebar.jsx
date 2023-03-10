@@ -1,91 +1,72 @@
 import Image from "next/image";
+import {
+  RiInformationFill,
+  RiLogoutBoxRLine,
+  RiCloseCircleFill,
+} from "react-icons/ri";
 
 export default function SideBar() {
   return (
     <>
-      {" "}
       <div
         className="d-flex flex-column flex-shrink-0 p-3 bg-light"
-        style={{ width: "280px" }}
+        style={{
+          width: "280px",
+          borderBottomRightRadius: "24px",
+          borderTopRightRadius: "24px",
+        }}
       >
         <a
           href="/"
-          className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+          className=" align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
         >
           <Image
+            alt="Fair&Aquare"
             src="/fslogo.svg"
             className="bi me-2"
             width="150"
             height="100"
           />
+
+          <Image
+            alt="Fair&Aquare"
+            src="/employee.svg"
+            className="bi me-2"
+            width="111"
+            height="25"
+          />
         </a>
-        <hr />
+        {/* <hr /> */}
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
             <a href="#" className="nav-link active" aria-current="page">
-              Home
+              <span className="menu-icon information">
+                <RiInformationFill />
+              </span>
+              Learn More
+              {/* This title encourages users to explore the content on the page to gain a better understanding of the platform or service. */}
             </a>
           </li>
           <li>
             <a href="#" className="nav-link link-dark">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link link-dark">
-              Orders
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link link-dark">
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link link-dark">
-              Customers
+              <span className="menu-icon delete-data">
+                <RiCloseCircleFill />
+              </span>
+              Delete Data
             </a>
           </li>
         </ul>
-        <hr />
         <div className="dropdown">
           <a
             href="#"
-            className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-            id="dropdownUser2"
-            data-bs-toggle="dropdown"
+            className="d-flex align-items-center link-dark text-decoration-none"
             aria-expanded="false"
           >
-            <strong>mdo</strong>
+            <span className="menu-icon logout">
+              <RiLogoutBoxRLine />
+            </span>
+            <strong>Logout</strong>
           </a>
-          <ul
-            className="dropdown-menu text-small shadow"
-            aria-labelledby="dropdownUser2"
-          >
-            <li>
-              <a className="dropdown-item" href="#">
-                New project...
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Profile
-              </a>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Sign out
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
       <style jsx>
@@ -154,7 +135,7 @@ export default function SideBar() {
           }
           .btn-toggle-nav a:hover,
           .btn-toggle-nav a:focus {
-            background-color: #d2f4ea;
+            background-color: #4e31aa;
           }
 
           .scrollarea {
@@ -166,6 +147,32 @@ export default function SideBar() {
           }
           .lh-tight {
             line-height: 1.25;
+          }
+          .menu-icon {
+            font-size: 1.5rem;
+            margin: 0 0.2rem 0 0;
+            line-height: 0;
+          }
+
+          .menu-icon.information {
+            color: #64d61b;
+          }
+
+          .menu-icon.delete-data {
+            color: #a51212;
+          }
+
+          .nav-link.active {
+            background: none;
+            color: #000;
+          }
+          .nav-link:hover {
+            background-color: #4e31aa;
+            color: #fff;
+          }
+
+          .nav-pills {
+            margin-top: 2rem;
           }
         `}
       </style>
