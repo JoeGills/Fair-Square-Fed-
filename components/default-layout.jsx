@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Sidebar from "./sidebar";
+import Cards from "./information-cards";
 
 export default function DefaultLayout({ children }) {
   return (
@@ -20,13 +21,13 @@ export default function DefaultLayout({ children }) {
 
         <main>
           <Sidebar />
-          {children}
+          <div className="content">{children}</div>
         </main>
       </div>
 
       <style jsx>{`
         .body {
-          color: #5a5a5a;
+          height: 100%;
         }
         main {
           display: flex;
@@ -35,6 +36,10 @@ export default function DefaultLayout({ children }) {
           max-height: 100vh;
           overflow-x: auto;
           overflow-y: hidden;
+        }
+        .content {
+          width: 100vw;
+          height: 100vh;
         }
       `}</style>
     </>

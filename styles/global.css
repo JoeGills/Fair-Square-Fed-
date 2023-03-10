@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -26,13 +28,16 @@ html {
 
 .btn-success {
   font-size: 1rem;
-  background: linear-gradient(to bottom right, #6ad206, #6ad206, #49e064);
+  background: #4db891;
   border-style: none;
   padding: 0.5rem 2rem;
   border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  text-shadow: 2px 2px 5px rgba(6, 4, 4, 0.457);
 }
+
+.btn-success:hover {
+  background: #4e31aa;
+}
+
 /* p {
   font-size: 1.2rem;
   text-shadow: 2px 2px 5px rgb(6, 4, 4);
@@ -66,4 +71,52 @@ html {
   color: #666;
   font-size: 0.8rem;
   margin: 0 0 1rem 0;
+}
+
+html {
+  font-family: Poppins;
+}
+
+body {
+  font-family: Poppins;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: inherit;
+}
+
+.tooltip {
+  font-family: Poppins;
+}
+
+.popover {
+  font-family: Poppins;
+}
+
+.text-monospace {
+  font-family: monospace;
+}
+
+.card h5 {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.card-text {
+  margin-bottom: 3rem;
+}
+
+.card.card-info {
+  width: 50vw;
 }
