@@ -10,7 +10,7 @@ export default function InformationCards({ children }) {
     <div className="information-cards">
       {/* Three columns of text below the carousel */}
       <div className="row">
-        <div className="col-lg-4 card-container">
+        <div className="col-md-4 card-container">
           <Card
             title={"Progress"}
             text={
@@ -19,7 +19,7 @@ export default function InformationCards({ children }) {
             icon={<MdStackedLineChart />}
           ></Card>
         </div>
-        <div className="col-lg-4 card-container">
+        <div className="col-md-4 card-container">
           <Card
             title={"Equality"}
             text={
@@ -28,7 +28,7 @@ export default function InformationCards({ children }) {
             icon={<MdBalance />}
           ></Card>
         </div>
-        <div className="col-lg-4 card-container">
+        <div className="col-md-4 card-container">
           <Card
             title={"Security"}
             text={
@@ -42,18 +42,16 @@ export default function InformationCards({ children }) {
       <style jsx>
         {`
           .information-cards {
+            position: absolute;
             width: 100vw;
             margin: 2rem auto 0 auto;
             padding: 2rem 5rem 0rem 5rem;
-            background-image: linear-gradient(
-              to bottom,
-              #d9dde6,
-              #fff 100px,
-              #d9dde6 10000px
-            );
+            background-color: #5e6c99;
             background-size: 100% 60%;
             background-position: 100% 100%;
             background-repeat: no-repeat;
+            bottom: 0;
+            z-index: -1;
           }
 
           .marketing .card-container {

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Sidebar from "./sidebar";
+import Cards from "./information-cards";
 
 export default function DefaultLayout({ children }) {
   return (
@@ -20,7 +21,10 @@ export default function DefaultLayout({ children }) {
 
         <main>
           <Sidebar />
-          <div className="content">{children}</div>
+          <div className="content">
+            {children}
+            <Cards />
+          </div>
         </main>
       </div>
 
