@@ -1,10 +1,14 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import DefaultLayout from "../../components/default-layout";
+import DefaultLayout from "../components/default-layout";
 import { useRouter } from "next/router";
+import categories from "../utils/categories";
 
-export default function EmployeePreferencePage() {
-  let [state, setState] = useState({ categories: [], submitted: false });
+export default function PreferencePage() {
+  let [state, setState] = useState({
+    categories: categories,
+    submitted: false,
+  });
   const router = useRouter();
 
   let Submit = () => {
@@ -16,36 +20,29 @@ export default function EmployeePreferencePage() {
     });
 
     setTimeout(() => {
-      router.push("/dashboard/diversity-form");
+      router.push("/questionnaire");
     }, 500);
   };
-
-  const getCategories = async () => {
-    try {
-      const res = await fetch(`/api/categories`);
-      const data = await res.json();
-      if (data) {
-        setState((prev) => {
-          return {
-            ...prev,
-            categories: data,
-          };
-        });
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getCategories();
-  }, []);
 
   return (
     <DefaultLayout>
       <Head>
-        <title>Login</title>
-        <link rel="icon" href="/favicon.ico" />
+      <title>
+          Fair & Square | User Preferences!
+        </title>
+        <meta
+          name="description"
+          content=" At Fair&Square, we are dedicated to helping organizations create more diverse and inclusive workplaces."
+        />
+        <meta
+          name="keywords"
+          content="Diversity and inclusivity, Workplace diversity, Inclusive hiring practices, Anonymous data tracking and analysis, Employee engagement, Data security and confidentiality, Equality and justice in the workplace, Improving hiring and promotion practices, Equitable society, Positive impact on employees"
+        />
+
+        {/* <meta name="robots" content="index, follow" /> */}
+        <meta name="robots" content="noindex, nofollow"/>
+
+        <link rel="canonical" href="https://fs.fs/" />
       </Head>
 
       <div className="d-flex body align-items-center justify-content-center">
@@ -103,44 +100,6 @@ export default function EmployeePreferencePage() {
         }
       `}</style>
 
-      {/* <div className="color-bg">
-        <FormLayout title="Are there any personal traits you don’t feel comfortable answering questions about?">
-          <form>
-            {state.categories.map((category, index) => {
-              return (
-                <div className="form-group" key={index}>
-                  <label>
-                    <input type="checkbox" /> {category.title}
-                    <span className="help-block">
-                      {category.description}. For example: {category.example}
-                    </span>
-                  </label>
-                </div>
-              );
-            })}
-
-            <br />
-            {state.submitted ? (
-              <div className="alert alert-success">Please wait...</div>
-            ) : (
-              <></>
-            )}
-            <button
-              onClick={() => Submit()}
-              type="button"
-              className="btn btn-success"
-            >
-              Submit
-            </button>
-          </form>
-
-          <style jsx>
-            {`
-             
-            `}
-          </style>
-        </FormLayout>
-      </div> */}
     </DefaultLayout>
   );
 }

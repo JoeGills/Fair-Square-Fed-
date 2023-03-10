@@ -1,9 +1,11 @@
 import Image from "next/image";
+import NavLink from "next/link";
 import {
   RiInformationFill,
   RiLogoutBoxRLine,
   RiCloseCircleFill,
 } from "react-icons/ri";
+import InformationCards from "./information-cards";
 
 export default function SideBar() {
   return (
@@ -38,7 +40,13 @@ export default function SideBar() {
         {/* <hr /> */}
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a href="#" className="nav-link active" aria-current="page">
+            <a
+              href="#"
+              className="nav-link active"
+              data-bs-toggle="modal"
+              data-bs-target="#learnMoreModal"
+              aria-current="page"
+            >
               <span className="menu-icon information">
                 <RiInformationFill />
               </span>
@@ -47,7 +55,12 @@ export default function SideBar() {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link link-dark">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#optoutModal"
+              className="nav-link link-dark"
+            >
               <span className="menu-icon delete-data">
                 <RiCloseCircleFill />
               </span>
@@ -56,8 +69,8 @@ export default function SideBar() {
           </li>
         </ul>
         <div className="dropdown">
-          <a
-            href="#"
+          <NavLink
+            href="/"
             className="d-flex align-items-center link-dark text-decoration-none logout-btn"
             aria-expanded="false"
           >
@@ -65,9 +78,128 @@ export default function SideBar() {
               <RiLogoutBoxRLine />
             </span>
             <strong>Logout</strong>
-          </a>
+          </NavLink>
         </div>
       </div>
+
+      <div
+        className="modal fade"
+        id="optoutModal"
+        tabIndex="-1"
+        aria-labelledby="optoutModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="optoutModalLabel">
+                Are you sure you want to delete your answers?
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              All of your data on our platform will be removed permnently and it
+              is not irreversible. Are you sure you want to delete your answers?
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-outline-danger">
+                Delete Data
+              </button>
+              <button
+                type="button"
+                className="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Go Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="modal fade"
+        id="learnMoreModal"
+        tabIndex="-1"
+        aria-labelledby="learnMoreLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="learnMoreLabel">
+                Hello!
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <div>
+                <h3>Fair & Square</h3>
+                <p>
+                  At Fair&Square, we are dedicated to helping organizations
+                  create more diverse and inclusive workplaces. We believe that
+                  a diverse workforce leads to better decision-making, improved
+                  innovation, and increased employee engagement and
+                  satisfaction.
+                </p>
+                <h3>Our Product</h3>
+                <p>
+                  We offer a unique product that allows companies to anonymously
+                  track and analyze their hiring and promotion practices. Our
+                  platform identifies areas where diversity can be improved and
+                  provides actionable insights to help organizations create more
+                  inclusive hiring and promotion processes.
+                </p>
+                <h3>Security</h3>
+                <p>
+                  At Fair&Square, we understand the importance of data security.
+                  That's why we have implemented the highest standards of
+                  security to ensure that all data collected is kept safe and
+                  confidential. We use state-of-the-art encryption technology
+                  and follow industry best practices to protect our customers'
+                  data.
+                </p>
+                <h3>Our Values</h3>
+                <p>
+                  At the core of our values is equality. We believe that every
+                  person deserves equal opportunities and treatment, regardless
+                  of their background or identity. We strive to create a more
+                  equitable and just workplace for all employees, where everyone
+                  feels valued and included.
+                </p>
+                <h3>Our Mission</h3>
+                <p>
+                  Our mission is to help organizations create more diverse and
+                  inclusive workplaces. We believe that by providing companies
+                  with the tools and insights they need to improve their hiring
+                  and promotion practices, we can make a positive impact on the
+                  lives of employees and help build a more equitable society.
+                </p>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Go Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <style jsx>
         {`
           .b-example-divider {
