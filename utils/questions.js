@@ -26,7 +26,7 @@ const questions = [
       "Hinduism",
       "Sikhism",
       "Other",
-      "Prefer not to say",
+      "I prefer not to share",
     ],
   },
   {
@@ -40,7 +40,7 @@ const questions = [
       "Pansexual",
       "Asexual",
       "Queer",
-      "Prefer not to say",
+      "I prefer not to share",
     ],
   },
   {
@@ -70,7 +70,7 @@ const questions = [
       "Hinduism",
       "Sikhism",
       "Other",
-      "Prefer not to say",
+      "I prefer not to share",
     ],
   },
   {
@@ -84,7 +84,7 @@ const questions = [
       "Pansexual",
       "Asexual",
       "Queer",
-      "Prefer not to say",
+      "I prefer not to share",
     ],
   },
   {
@@ -114,7 +114,7 @@ const questions = [
       "Hinduism",
       "Sikhism",
       "Other",
-      "Prefer not to say",
+      "I prefer not to share",
     ],
   },
   {
@@ -128,7 +128,7 @@ const questions = [
       "Pansexual",
       "Asexual",
       "Queer",
-      "Prefer not to say",
+      "I prefer not to share",
     ],
   },
 ];

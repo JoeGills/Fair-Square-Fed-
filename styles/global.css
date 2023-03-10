@@ -26,12 +26,15 @@ html {
   height: -webkit-fill-available;
 }
 
+.btn {
+  border-radius: 10px;
+}
+
 .btn-success {
   font-size: 1rem;
   background: #4db891;
   border-style: none;
   padding: 0.5rem 2rem;
-  border-radius: 10px;
 }
 
 .btn-success:hover {

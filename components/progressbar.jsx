@@ -4,30 +4,34 @@ import Answered from "../public/answered.svg";
 import Current from "../public/current.svg";
 import Empty from "../public/gray.svg";
 import QuestionContext from "../utils/questionContext";
-import Questions from "../utils/questions";
+import questions from "../utils/questions";
 
 function ProgressBar({ currentQuestion }) {
-  const { state, setState } = useContext(QuestionContext);
+  const { sharedState, setSharedState } = useContext(QuestionContext);
 
-  const numQuestions = Questions.length;
-  const squares = Array(numQuestions)
-    .fill()
-    .map((_, index) => {
-      const isCurrent = index === currentQuestion;
-      const isAnswered = index < currentQuestion;
-      let squareImage = Empty;
-      if (isAnswered) {
-        squareImage = isCurrent ? Current : Answered;
-      }
+  const numQuestions = questions.length;
+  const squares = questions.map((question, index) => {
+    let answer = sharedState.answers[index];
+    const isCurrent = index === currentQuestion;
+    const isAnswered = answer != null && answer != undefined;
 
-      return (
-        <div key={index} className="square-container">
-          <Image src={squareImage} alt="square" />
-        </div>
-      );
-    });
+    let squareImage = Empty;
+    if (isAnswered) {
+      squareImage = Answered;
+    }
 
-  console.log(state);
+    if (isCurrent) {
+      squareImage = Current;
+    }
+
+    return (
+      <div key={index} className="square-container">
+        <Image src={squareImage} alt="square" />
+      </div>
+    );
+  });
+
+  // console.log(sharedState);
 
   return (
     <div className="progress-bar">

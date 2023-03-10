@@ -2,11 +2,13 @@ import React from "react";
 import { useState } from "react";
 import "../styles/global.css";
 import QuestionContext from "../utils/questionContext";
+import questions from "../utils/questions";
 
 function FairSquareApp({ Component, pageProps }) {
   const [sharedState, setSharedState] = useState({
-    currentQuestion: {},
-    index: 0,
+    currentQuestion: questions[0],
+    currentQuestionIndex: 0,
+    answers: questions.map((x) => {}),
   });
 
   return (
