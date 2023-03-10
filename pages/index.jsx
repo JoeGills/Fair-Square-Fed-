@@ -3,19 +3,22 @@ import DefaultLayout from "../components/default-layout";
 import Cards from "../components/information-cards";
 import Image from "next/image";
 import NavLink from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import QuestionContext from "../utils/questionContext";
 import questions from "../utils/questions";
 
 export default function LandingPage() {
   const { sharedState, setSharedState } = useContext(QuestionContext);
-  setSharedState((prev) => {
-    return {
-      ...prev,
-      currentQuestion: questions[0],
-      currentQuestionIndex: 0,
-    };
-  });
+  useEffect(() => {
+    setSharedState((prev) => {
+      return {
+        ...prev,
+        currentQuestion: questions[0],
+        currentQuestionIndex: 0,
+      };
+    });
+    console.log("Restarted");
+  }, []);
 
   return (
     <DefaultLayout>
