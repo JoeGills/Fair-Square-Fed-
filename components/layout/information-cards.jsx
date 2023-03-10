@@ -42,6 +42,7 @@ export default function InformationCards({ children }) {
       <style jsx>
         {`
           .information-cards {
+            position: absolute;
             width: 100vw;
             margin: 2rem auto 0 auto;
             padding: 2rem 5rem 0rem 5rem;
@@ -49,6 +50,8 @@ export default function InformationCards({ children }) {
             background-size: 100% 60%;
             background-position: 100% 100%;
             background-repeat: no-repeat;
+            bottom: 0;
+            z-index: -1;
           }
 
           .marketing .card-container {
