@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { RiInformationFill } from "react-icons/ri";
+import {
+  RiInformationFill,
+  RiLogoutBoxRLine,
+  RiCloseCircleFill,
+} from "react-icons/ri";
 
 export default function SideBar() {
   return (
@@ -19,12 +23,20 @@ export default function SideBar() {
             width="150"
             height="100"
           />
+          <br />
+          <Image
+            alt="Fair&Aquare"
+            src="/employee.svg"
+            className="bi me-2"
+            width="100"
+            height="100"
+          />
         </a>
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
             <a href="#" className="nav-link active" aria-current="page">
-              <span className="menu-icon">
+              <span className="menu-icon information">
                 <RiInformationFill />
               </span>
               Learn More
@@ -33,64 +45,24 @@ export default function SideBar() {
           </li>
           <li>
             <a href="#" className="nav-link link-dark">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link link-dark">
-              Orders
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link link-dark">
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link link-dark">
-              Customers
+              <span className="menu-icon delete-data">
+                <RiCloseCircleFill />
+              </span>
+              Delete Data
             </a>
           </li>
         </ul>
-        <hr />
         <div className="dropdown">
           <a
             href="#"
-            className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-            id="dropdownUser2"
-            data-bs-toggle="dropdown"
+            className="d-flex align-items-center link-dark text-decoration-none"
             aria-expanded="false"
           >
-            <strong>mdo</strong>
+            <span className="menu-icon logout">
+              <RiLogoutBoxRLine />
+            </span>
+            <strong>Logout</strong>
           </a>
-          <ul
-            className="dropdown-menu text-small shadow"
-            aria-labelledby="dropdownUser2"
-          >
-            <li>
-              <a className="dropdown-item" href="#">
-                New project...
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Profile
-              </a>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Sign out
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
       <style jsx>
@@ -159,7 +131,7 @@ export default function SideBar() {
           }
           .btn-toggle-nav a:hover,
           .btn-toggle-nav a:focus {
-            background-color: #d2f4ea;
+            background-color: #4e31aa;
           }
 
           .scrollarea {
@@ -176,6 +148,18 @@ export default function SideBar() {
             font-size: 1.5rem;
             margin: 0 0.2rem 0 0;
             line-height: 0;
+          }
+
+          .menu-icon.information {
+            color: #64d61b;
+          }
+
+          .menu-icon.delete-data {
+            color: #a51212;
+          }
+
+          .nav-link.active {
+            background-color: #4e31aa;
           }
         `}
       </style>
