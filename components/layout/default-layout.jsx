@@ -21,15 +21,13 @@ export default function DefaultLayout({ children }) {
 
         <main>
           <Sidebar />
-          <div className="content">
-            {children}
-            <Cards />
-          </div>
+          <div className="content">{children}</div>
         </main>
       </div>
 
       <style jsx>{`
         .body {
+          height: 100%;
         }
         main {
           display: flex;
@@ -40,8 +38,8 @@ export default function DefaultLayout({ children }) {
           overflow-y: hidden;
         }
         .content {
-          padding: 1rem;
           width: 100vw;
+          height: 100vh;
         }
       `}</style>
     </>

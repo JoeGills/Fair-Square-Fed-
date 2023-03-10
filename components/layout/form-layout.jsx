@@ -4,14 +4,14 @@ export default function FormLayout({ children, title }) {
   return (
     <>
       <div className="row">
-        <div className="col-md-3"></div>
-        <div className="col-md-6">
+        <div className="col-md-2"></div>
+        <div className="col-md-8">
           <div className="formContainer">
             <div className="formTitle">
               <div className="alert alert-primary d-flex align-items-center">
-                <div className="bi flex-shrink-0 me-2 icon">
+                {/* <div className="bi flex-shrink-0 me-2 icon">
                   <HiInformationCircle />
-                </div>
+                </div> */}
                 <h3>{title}</h3>
               </div>
             </div>

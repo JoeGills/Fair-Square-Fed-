@@ -14,7 +14,7 @@ export default function InformationCards({ children }) {
           <Card
             title={"Progress"}
             text={
-              "We use reliable and ethical methods to collect and analyze data on diversity. We protect the privacy and confidentiality of our data sources. We use the insights from our data to inform our actions and policies. We aim to promote fairness and justice for all."
+              "We use reliable and ethical methods to collect and analyze data on diversity. "
             }
             icon={<MdStackedLineChart />}
           ></Card>
@@ -23,7 +23,7 @@ export default function InformationCards({ children }) {
           <Card
             title={"Equality"}
             text={
-              "We welcome people of all backgrounds, identities, and perspectives to join our community. We foster a culture of inclusion, respect, and collaboration. We celebrate our differences and learn from each other. We strive to create a better world for everyone."
+              "We welcome people of all backgrounds, identities, and perspectives to join our community."
             }
             icon={<MdBalance />}
           ></Card>
@@ -32,7 +32,7 @@ export default function InformationCards({ children }) {
           <Card
             title={"Security"}
             text={
-              "We use advanced encryption, authentication, and authorization methods to protect your data. We do not share your personal information with third parties without your consent. We respect your rights and preferences regarding your data."
+              "We use advanced encryption, authentication, and authorization methods to protect your data."
             }
             icon={<MdOutlineSecurity />}
           ></Card>
@@ -42,20 +42,16 @@ export default function InformationCards({ children }) {
       <style jsx>
         {`
           .information-cards {
-            position: absolute;
-            width: 100vw;
-            margin: 2rem auto 0 auto;
-            padding: 2rem 5rem 0rem 5rem;
+            width: calc(100vw - 280px);
+            margin: 0;
+            padding: 2rem 5rem 2rem 5rem;
             background-color: #5e6c99;
             background-size: 100% 60%;
             background-position: 100% 100%;
             background-repeat: no-repeat;
-            bottom: 0;
-            z-index: -1;
           }
 
           .marketing .card-container {
-            padding: 3rem;
             margin-bottom: 1.5rem;
             text-align: center;
           }

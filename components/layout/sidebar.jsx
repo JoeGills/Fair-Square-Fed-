@@ -12,7 +12,6 @@ export default function SideBar() {
         className="d-flex flex-column flex-shrink-0 p-3 bg-light"
         style={{
           width: "280px",
-          borderBottomRightRadius: "24px",
           borderTopRightRadius: "24px",
         }}
       >
@@ -59,7 +58,7 @@ export default function SideBar() {
         <div className="dropdown">
           <a
             href="#"
-            className="d-flex align-items-center link-dark text-decoration-none"
+            className="d-flex align-items-center link-dark text-decoration-none logout-btn"
             aria-expanded="false"
           >
             <span className="menu-icon logout">
@@ -155,11 +154,16 @@ export default function SideBar() {
           }
 
           .menu-icon.information {
-            color: #64d61b;
+            color: #4db891;
           }
 
           .menu-icon.delete-data {
-            color: #a51212;
+            color: #4e31aa;
+          }
+
+          .menu-icon.logout,
+          .logout-btn {
+            color: #4e31aa;
           }
 
           .nav-link.active {
