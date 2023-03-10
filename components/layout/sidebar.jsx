@@ -170,6 +170,9 @@ export default function SideBar() {
             background-color: #4e31aa;
             color: #fff;
           }
+          .nav-link:hover .menu-icon {
+            color: #fff;
+          }
 
           .nav-pills {
             margin-top: 2rem;

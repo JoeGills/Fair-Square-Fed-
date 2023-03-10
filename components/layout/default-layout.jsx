@@ -20,13 +20,12 @@ export default function DefaultLayout({ children }) {
 
         <main>
           <Sidebar />
-          {children}
+          <div className="content">{children}</div>
         </main>
       </div>
 
       <style jsx>{`
         .body {
-          color: #5a5a5a;
         }
         main {
           display: flex;
@@ -35,6 +34,10 @@ export default function DefaultLayout({ children }) {
           max-height: 100vh;
           overflow-x: auto;
           overflow-y: hidden;
+        }
+        .content {
+          padding: 1rem;
+          width: 100vw;
         }
       `}</style>
     </>

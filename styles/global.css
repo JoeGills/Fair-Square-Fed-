@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -66,4 +68,39 @@ html {
   color: #666;
   font-size: 0.8rem;
   margin: 0 0 1rem 0;
+}
+
+html {
+  font-family: Poppins;
+}
+
+body {
+  font-family: Poppins;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: inherit;
+}
+
+.tooltip {
+  font-family: Poppins;
+}
+
+.popover {
+  font-family: Poppins;
+}
+
+.text-monospace {
+  font-family: monospace;
 }

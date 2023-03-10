@@ -13,6 +13,8 @@ export default function LandingPage() {
         />
         <meta name="keywords" content="Lorem ipsum dolor sit amet" />
       </Head>
+
+      <div>Hello Content</div>
     </DefaultLayout>
   );
 }
