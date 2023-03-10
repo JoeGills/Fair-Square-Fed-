@@ -21,10 +21,7 @@ export default function DefaultLayout({ children }) {
 
         <main>
           <Sidebar />
-          <div className="content">
-            {children}
-            <Cards />
-          </div>
+          <div className="content">{children}</div>
         </main>
       </div>
 
@@ -42,7 +39,9 @@ export default function DefaultLayout({ children }) {
         .content {
           padding: 1rem;
           width: 100vw;
+          height:100%;
         }
+        
       `}</style>
     </>
   );
