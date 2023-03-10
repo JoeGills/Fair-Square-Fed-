@@ -1,6 +1,7 @@
 import Head from "next/head";
 import DefaultLayout from "../components/layout/default-layout";
 import Carousel from "../components/carousel";
+import ProgressBar from "../components/progressbar";
 
 export default function LandingPage() {
   return (
@@ -14,7 +15,10 @@ export default function LandingPage() {
         <meta name="keywords" content="Lorem ipsum dolor sit amet" />
       </Head>
 
-      <div>Hello Content</div>
+      <div>
+        Hello Content
+        <ProgressBar />
+      </div>
     </DefaultLayout>
   );
 }
