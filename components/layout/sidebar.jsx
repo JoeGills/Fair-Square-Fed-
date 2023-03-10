@@ -12,7 +12,6 @@ export default function SideBar() {
         className="d-flex flex-column flex-shrink-0 p-3 bg-light"
         style={{
           width: "280px",
-          borderBottomRightRadius: "24px",
           borderTopRightRadius: "24px",
         }}
       >
