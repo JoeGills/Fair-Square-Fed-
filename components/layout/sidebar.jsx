@@ -1,9 +1,9 @@
 import Image from "next/image";
+import { RiInformationFill } from "react-icons/ri";
 
 export default function SideBar() {
   return (
     <>
-      {" "}
       <div
         className="d-flex flex-column flex-shrink-0 p-3 bg-light"
         style={{ width: "280px" }}
@@ -13,6 +13,7 @@ export default function SideBar() {
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
         >
           <Image
+            alt="Fair&Aquare"
             src="/fslogo.svg"
             className="bi me-2"
             width="150"
@@ -23,7 +24,11 @@ export default function SideBar() {
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
             <a href="#" className="nav-link active" aria-current="page">
-              Home
+              <span className="menu-icon">
+                <RiInformationFill />
+              </span>
+              Learn More
+              {/* This title encourages users to explore the content on the page to gain a better understanding of the platform or service. */}
             </a>
           </li>
           <li>
@@ -166,6 +171,11 @@ export default function SideBar() {
           }
           .lh-tight {
             line-height: 1.25;
+          }
+          .menu-icon {
+            font-size: 1.5rem;
+            margin: 0 0.2rem 0 0;
+            line-height: 0;
           }
         `}
       </style>
