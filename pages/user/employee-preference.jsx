@@ -1,9 +1,6 @@
-import Image from "next/image";
-import NavLink from "next/link";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import DefaultLayout from "../../components/layout/default-layout";
-import FormLayout from "../../components/layout/form-layout";
+import DefaultLayout from "../../components/default-layout";
 import { useRouter } from "next/router";
 
 export default function EmployeePreferencePage() {

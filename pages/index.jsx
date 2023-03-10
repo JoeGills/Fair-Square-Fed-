@@ -1,8 +1,6 @@
 import Head from "next/head";
-import DefaultLayout from "../components/layout/default-layout";
-import Carousel from "../components/carousel";
-import ProgressBar from "../components/progressbar";
-import Cards from "../components/layout/information-cards";
+import DefaultLayout from "../components/default-layout";
+import Cards from "../components/information-cards";
 import Image from "next/image";
 import NavLink from "next/link";
 

@@ -2,9 +2,10 @@ import Image from "next/image";
 import Answered from "../public/answered.svg";
 import Current from "../public/current.svg";
 import Empty from "../public/gray.svg";
+import Questions from "../utils/questions";
 
 function ProgressBar({ currentQuestion }) {
-  const numQuestions = 5;
+  const numQuestions = Questions.length;
   const squares = Array(numQuestions)
     .fill()
     .map((_, index) => {
@@ -28,8 +29,9 @@ function ProgressBar({ currentQuestion }) {
       <style jsx>{`
         .progress-bar {
           display: flex;
+          background-color: transparent;
           flex-direction: row;
-          gap: 1rem;
+          gap: 1.5rem;
           align-items: center;
           padding: 1rem;
         }
