@@ -113,6 +113,10 @@ textarea {
   font-size: 2rem;
 }
 
-.card-text p {
-  margin-bottom: 2rem;
+.card-text {
+  margin-bottom: 3rem;
+}
+
+.card.card-info {
+  width: 50vw;
 }

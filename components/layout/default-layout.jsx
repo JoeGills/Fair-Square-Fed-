@@ -27,6 +27,7 @@ export default function DefaultLayout({ children }) {
 
       <style jsx>{`
         .body {
+          height: 100%;
         }
         main {
           display: flex;
@@ -38,9 +39,8 @@ export default function DefaultLayout({ children }) {
         }
         .content {
           width: 100vw;
-          height:100%;
+          height: 100%;
         }
-        
       `}</style>
     </>
   );

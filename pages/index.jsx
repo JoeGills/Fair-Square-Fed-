@@ -14,21 +14,28 @@ export default function LandingPage() {
         <meta name="keywords" content="Lorem ipsum dolor sit amet" />
       </Head>
       <div className="body d-flex align-items-center justify-content-center">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">Are you ready?</h5>
-            <p class="card-text">
+        <div className="card text-center card-info">
+          <div className="card-body">
+            <h5 className="card-title">Are you ready?</h5>
+            <p className="card-text">
               This is a description on what this trait means. This is a
               description on what this trait means. This is a description on
               what this trait means. This is a description on what this trait
               means. This is a description on what this trait means.
             </p>
-            <a href="#" class="btn btn-success">
+            <a href="#" className="btn btn-success">
               Get Started
             </a>
           </div>
         </div>
+        <Cards />
       </div>
+
+      <style jsx>{`
+        .body {
+          height: 100%;
+        }
+      `}</style>
     </DefaultLayout>
   );
 }
