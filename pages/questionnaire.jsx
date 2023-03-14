@@ -118,74 +118,114 @@ export default function QuestionnairePage() {
   };
 
   return (
-    <DefaultLayout>
-      <Head>
-        <title>
-          Fair & Square |{" "}
-          {sharedState.currentQuestion && sharedState.currentQuestion.question
-            ? sharedState.currentQuestion.question
-            : ""}
-          !
-        </title>
-        <meta
-          name="description"
-          content={
-            (sharedState.currentQuestion && sharedState.currentQuestion.question
-              ? sharedState.currentQuestion.question
-              : "") +
-            "At Fair&Square, we are dedicated to helping organizations create more diverse and inclusive workplaces."
-          }
-        />
-        <meta
-          name="keywords"
-          content="Diversity and inclusivity, Workplace diversity, Inclusive hiring practices, Anonymous data tracking and analysis, Employee engagement, Data security and confidentiality, Equality and justice in the workplace, Improving hiring and promotion practices, Equitable society, Positive impact on employees"
-        />
+		<DefaultLayout>
+			<Head>
+				<title>
+					Fair & Square |{" "}
+					{sharedState.currentQuestion &&
+					sharedState.currentQuestion
+						.question
+						? sharedState
+								.currentQuestion
+								.question
+						: ""}
+					!
+				</title>
+				<meta
+					name="description"
+					content={
+						(sharedState.currentQuestion &&
+						sharedState.currentQuestion
+							.question
+							? sharedState
+									.currentQuestion
+									.question
+							: "") +
+						"At Fair&Square, we are dedicated to helping organizations create more diverse and inclusive workplaces."
+					}
+				/>
+				<meta
+					name="keywords"
+					content="Diversity and inclusivity, Workplace diversity, Inclusive hiring practices, Anonymous data tracking and analysis, Employee engagement, Data security and confidentiality, Equality and justice in the workplace, Improving hiring and promotion practices, Equitable society, Positive impact on employees"
+				/>
 
-        {/* <meta name="robots" content="index, follow" /> */}
-        <meta name="robots" content="noindex, nofollow" />
+				{/* <meta name="robots" content="index, follow" /> */}
+				<meta
+					name="robots"
+					content="noindex, nofollow"
+				/>
 
-        <link rel="canonical" href="https://fs.fs/" />
-      </Head>
+				<link
+					rel="canonical"
+					href="https://fs.fs/"
+				/>
+			</Head>
 
-      <div className="d-flex body align-items-center justify-content-center">
-        <div className="card text-center card-info">
-          <div className="card-body">
-            <h5 className="card-title">
-              {sharedState.currentQuestion &&
-              sharedState.currentQuestion.question
-                ? sharedState.currentQuestion.question
-                : ""}
-            </h5>
-            <div className="card-text">
-              <form>
-                <i>{sharedState.currentQuestion.description}</i>
-                <select
-                  className="form-select options"
-                  value={selectedAnswer}
-                  onChange={handleAnswerChange}
-                >
-                  <option></option>
-                  {sharedState.currentQuestion.options.map((option, index) => {
-                    return (
-                      <option key={index} value={option}>
-                        {option}
-                      </option>
-                    );
-                  })}
-                </select>
-                <div className="buttons d-flex justify-content-between">
-                  <div className="buttons-left">
-                    <button
-                      disabled={sharedState.currentQuestionIndex == 0}
-                      onClick={() => Previous()}
-                      type="button"
-                      className="btn btn-success"
-                    >
-                      {/* <MdArrowBackIosNew /> */}
-                      Previous
-                    </button>
+			<div className="d-flex body align-items-center justify-content-center">
+				<div className="card text-center card-info">
+					<div className="card-body">
+						<h5 className="card-title">
+							{sharedState.currentQuestion &&
+							sharedState
+								.currentQuestion
+								.question
+								? sharedState
+										.currentQuestion
+										.question
+								: ""}
+						</h5>
+						<div className="card-text">
+							<form>
+								<i>
+									{
+										sharedState
+											.currentQuestion
+											.description
+									}
+								</i>
+								<select
+									className="form-select options"
+									value={selectedAnswer}
+									onChange={
+										handleAnswerChange
+									}
+								>
+									<option value="">
+										--Please choose an option--
+									</option>
 
-                    {/* <button
+									{sharedState.currentQuestion.options.map(
+										(option, index) => {
+											return (
+												<option
+													key={index}
+													value={option}
+												>
+													{option}
+												</option>
+											);
+										}
+									)}
+								</select>
+
+								<div className="buttons d-flex justify-content-between">
+									<div className="buttons-left">
+										<button
+											disabled={
+												sharedState.currentQuestionIndex ==
+												0
+											}
+											onClick={() =>
+												Previous()
+											}
+											type="button"
+											className="btn btn-success"
+										>
+											{/* <MdArrowBackIosNew /> */}
+											Previous
+										</button>
+
+										{/* <button
                       disabled={
                         sharedState.currentQuestionIndex == questions.length - 1
                       }
@@ -195,62 +235,70 @@ export default function QuestionnairePage() {
                     >
                       <MdArrowForwardIos />
                     </button> */}
-                  </div>
-                  <div className="buttons-right">
-                    <button
-                      onClick={() => Skip()}
-                      type="button"
-                      className="btn btn-outline-danger btn-skip"
-                    >
-                      Skip
-                    </button>
+									</div>
+									<div className="buttons-right">
+										<button
+											onClick={() =>
+												Skip()
+											}
+											type="button"
+											className="btn btn-outline-danger btn-skip"
+										>
+											Skip
+										</button>
 
-                    <button
-                      onClick={() => Submit()}
-                      type="button"
-                      className="btn btn-success"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <ProgressBar currentQuestion={sharedState.currentQuestionIndex} />
-          </div>
-        </div>
-      </div>
+										<button
+											onClick={() =>
+												Submit()
+											}
+											type="button"
+											className="btn btn-success"
+										>
+											Submit
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<ProgressBar
+							currentQuestion={
+								sharedState.currentQuestionIndex
+							}
+						/>
+					</div>
+				</div>
+			</div>
 
-      <style jsx>{`
-        .body {
-          height: 100vh;
-        }
+			<style jsx>{`
+				.body {
+					height: 100vh;
+				}
 
-        form {
-          text-align: left;
-        }
+				form {
+					text-align: left;
+				}
 
-        .card-body {
-          padding: 1rem 5rem 2rem 5rem;
-        }
+				.card-body {
+					padding: 1rem 5rem 2rem 5rem;
+				}
 
-        .buttons {
-          width: 100%;
-        }
+				.buttons {
+					width: 100%;
+				}
 
-        .btn-skip {
-          margin-right: 1rem;
-        }
+				.btn-skip {
+					margin-right: 1rem;
+				}
 
-        .btn-next {
-          margin-left: 0.5rem;
-        }
+				.btn-next {
+					margin-left: 0.5rem;
+				}
 
-        .options {
-          margin-top: 4rem;
-          margin-bottom: 4rem;
-        }
-      `}</style>
-    </DefaultLayout>
-  );
+				.options {
+					margin-top: 4rem;
+					margin-bottom: 4rem;
+				}
+			`}</style>
+		</DefaultLayout>
+	);
 }
