@@ -14,6 +14,14 @@ const questions = [
       "I prefer not to share",
     ],
   },
+
+  {
+    question: "Abilities",
+    description:
+      "Personal abilities and disabilities of yours. For example, Disability Status, Language Proficiency, Problem Solving Skills",
+    options: [],
+  },
+
   {
     question: "What is your religious affiliation?",
     description:
