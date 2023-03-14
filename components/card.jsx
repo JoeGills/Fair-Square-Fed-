@@ -23,6 +23,7 @@ export default function Card({ icon, title, text }) {
             border-radius: 1rem;
             text-align: center;
             margin: 0 0 2rem 0;
+            height:200px;
           }
 
           .card p {
