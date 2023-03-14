@@ -1,13 +1,11 @@
 import Head from "next/head";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import DefaultLayout from "../components/default-layout";
 import { useRouter } from "next/router";
 import ProgressBar from "../components/progressbar";
 import QuestionContext from "../utils/questionContext";
 import questions from "../utils/questions";
 import { MdOutlineFeedback } from "react-icons/md";
-
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 export default function QuestionnairePage() {
   const { sharedState, setSharedState } = useContext(QuestionContext);
@@ -171,31 +169,143 @@ export default function QuestionnairePage() {
             <div className="card-text">
               <form>
                 <i>{sharedState.currentQuestion.description}</i>
-                <select
-                  className="form-select options"
-                  value={selectedAnswer}
-                  onChange={handleAnswerChange}
-                >
-                  <option value="">--Please choose an option--</option>
-
-                  {sharedState.currentQuestion.options.map((option, index) => {
-                    return (
-                      <option key={index} value={option}>
-                        {option}
-                      </option>
-                    );
-                  })}
-                  <option value="NotExist">My option does not exist</option>
-                </select>
-                {newOption ? (
+                {sharedState.currentQuestion.question == "Abilities" ? (
                   <>
-                    <a href="#" onClick={() => displayFeedbackModal()}>
-                      Suggest an option
-                    </a>
+                    <div>
+                      <hr />
+                      <h6>
+                        You can have any kind of form inputs and ask for
+                        different type of question like these:
+                      </h6>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckIndeterminate"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="flexCheckIndeterminate"
+                        >
+                          This is option number one
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckDefault"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="flexCheckDefault"
+                        >
+                          This is another option
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          defaultChecked
+                        />
+                        <label
+                          className="form-check-label"
+                          for="flexCheckChecked"
+                        >
+                          And perhabs something
+                        </label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <hr />
+                      <h6>This is a sample of radio buttons:</h6>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault1"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="flexRadioDefault1"
+                        >
+                          Default radio
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          defaultChecked
+                        />
+                        <label
+                          className="form-check-label"
+                          for="flexRadioDefault2"
+                        >
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <hr />
+                      <h6>
+                        Morevoer, you can give the user the option to input some
+                        free-text writings:
+                      </h6>
+                      <div className="form-group">
+                        <label for="exampleFormControlTextarea1">
+                          Example textarea
+                        </label>
+                        <textarea
+                          className="form-control"
+                          id="exampleFormControlTextarea1"
+                          rows="3"
+                        ></textarea>
+                      </div>
+                    </div>
                   </>
                 ) : (
-                  <></>
+                  <>
+                    <select
+                      className="form-select options"
+                      value={selectedAnswer}
+                      onChange={handleAnswerChange}
+                    >
+                      <option value="">--Please choose an option--</option>
+
+                      {sharedState.currentQuestion.options.map(
+                        (option, index) => {
+                          return (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          );
+                        }
+                      )}
+                      <option value="NotExist">My option does not exist</option>
+                    </select>
+                    {newOption ? (
+                      <>
+                        <a href="#" onClick={() => displayFeedbackModal()}>
+                          Suggest an option
+                        </a>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 )}
+
                 <div className="buttons d-flex justify-content-between">
                   <div className="buttons-left">
                     <button
@@ -258,6 +368,7 @@ export default function QuestionnairePage() {
       <style jsx>{`
         .body {
           height: 100vh;
+          overflow-y: scroll;
         }
 
         form {
