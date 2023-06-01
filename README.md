@@ -1,1 +1,2 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Fair&Square is a website for collecting information of the employees.
+It analyses the diversity based on the data.
