@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Card from "./card";
-import { MdOutlineSecurity } from "react-icons/md"; // Add this import statement
+import { MdOutlineSecurity } from "react-icons/md";
 
 test("renders Card component correctly", () => {
   // Define the props you want to pass to the Card component
@@ -18,6 +18,6 @@ test("renders Card component correctly", () => {
   expect(getByText("Test Title")).toBeInTheDocument();
   expect(getByText("Test Text")).toBeInTheDocument();
 
-  // Check if the icon is rendered correctly (you can check the existence of the icon element)
+  // Check if the icon is rendered correctly
   expect(container.querySelector(".card span")).toBeInTheDocument();
 });
