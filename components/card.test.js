@@ -4,7 +4,6 @@ import Card from "./card";
 import { MdOutlineSecurity } from "react-icons/md";
 
 test("renders Card component correctly", () => {
-  // Define the props you want to pass to the Card component
   const props = {
     icon: <MdOutlineSecurity />,
     title: "Test Title",
